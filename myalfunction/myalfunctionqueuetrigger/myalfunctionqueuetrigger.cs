@@ -5,6 +5,7 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using Shared;
 
 namespace myalfunction
 {
@@ -17,7 +18,7 @@ namespace myalfunction
         {
             log.LogInformation($"C# Queue trigger function processed");
             var text = JsonConvert.SerializeObject(command);
-            var myblob = await binder.BindAsync<TextWriter>(new BlobAttribute($"my-blob1/{command.UserId}_{command.ProductId}.json",
+            var myblob = await binder.BindAsync<TextWriter>(new BlobAttribute($"my-blob1/{command.userId}_{command.product}.json",
             FileAccess.Write));
             myblob.WriteLine(text);
 

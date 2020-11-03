@@ -8,6 +8,7 @@ using Microsoft.Azure.WebJobs.Extensions.Storage;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using Shared;
 
 namespace myalfunction
 {
